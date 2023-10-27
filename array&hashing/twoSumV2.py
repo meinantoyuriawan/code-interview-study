@@ -7,6 +7,19 @@ def twoSum(nums, target):
         indexes[nums[i]] = i
     return indexes
 
+# two pointer (in leetcode, the array is sorted for this particular problem)
+def twoSum2Pointer(nums, target):
+    l = 0
+    r = len(nums) -1
+
+    while l<r:
+        if nums[l] + nums[r] == target:
+            return ([l,r])
+        elif nums[l] + nums[r] < target:
+            l+=1
+        else:
+            r-=1
+
 def run_testcase():
     input = [[2, 7, 11, 15], [3,2,4]]
     target = [9, 6]
