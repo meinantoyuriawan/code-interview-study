@@ -1,3 +1,6 @@
 two pointer = 
 - validpalindrome
 - twosumv2
+- threesum
+- containermostwater
+- trappingrainwater (advanced version of containermostwater)
