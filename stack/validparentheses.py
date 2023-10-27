@@ -32,5 +32,44 @@ def isValid(s):
     else:
         return False
     
-s = "()[]{}"
-print(isValid(s))
+def isValidHash(s):
+    htab = {
+        ")":"(",
+        "}":"{",
+        "]":"["
+    }
+    stack = []
+    for c in s:
+        if c not in htab:
+            stack.append(c)
+            continue
+        if not stack or stack[-1] != htab[c]:
+            return False
+        stack.pop()
+
+    return not stack #true if the stack is empty at the end
+    
+def run_testcase():
+    input = ["()", "()[]{}", "(]"]
+    output = [True, True, False]
+    print("testing using array")
+    for i in range(len(input)):
+        vals = isValid(input[i])
+        if output[i] == vals:
+            print("Testcase %s success, input: %s, outcome: %s" % (i+1, 
+                input[i], output[i]))
+        else:
+            print("Testcase %s failed, input: %s, outcome: %s, but instead: %s" % (i+1, 
+                input[i], output[i], vals))
+    print("testing using hash table")
+    for i in range(len(input)):
+        vals = isValidHash(input[i])
+        if output[i] == vals:
+            print("Testcase %s success, input: %s, outcome: %s" % (i+1, 
+                input[i], output[i]))
+        else:
+            print("Testcase %s failed, input: %s, outcome: %s, but instead: %s" % (i+1, 
+                input[i], output[i], vals))
+            
+if __name__ == "__main__":
+    run_testcase()
