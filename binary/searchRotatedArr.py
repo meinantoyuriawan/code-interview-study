@@ -18,8 +18,8 @@ def search(nums, target):
         # go right (leftest element is the lowest and the target even lower than that)
         # (the trend is most likely positive until mid)
         # binary search as usual
-        if l <= mid:
-            if target < nums[l] or target > mid:
+        if nums[l] <= nums[mid]:
+            if target < nums[l] or target > nums[mid]:
                 # go right
                 l = mid+1
             else:
@@ -32,7 +32,7 @@ def search(nums, target):
         # (the trend is negative towards mid because l>mid)
         # binary search as usual
         else:
-            if target<mid or target>nums[r]:
+            if target<nums[mid] or target>nums[r]:
                 # go left
                 r = mid-1
             else:
