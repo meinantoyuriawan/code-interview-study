@@ -23,3 +23,20 @@ def charReplacement(s, k):
         res = max(res, r-l+1)
     
     return res
+
+
+def run_testcase():
+
+    s = ["ABAB", "AABABBA"]
+    k = [2, 1]
+    output = [4, 4]
+    for i in range(len(s)):
+        if (charReplacement(s[i], k[i])) != output[i]:
+            print("Testcase %s failed, s: %s, k: %s, outcome: %s" % (i+1, 
+                s[i], k[i], output[i]))
+            continue
+        print("Testcase %s success, s: %s, k: %s, outcome: %s" % (i+1, 
+                s[i], k[i], output[i]))
+
+if __name__ == "__main__":
+    run_testcase()
