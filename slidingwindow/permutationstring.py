@@ -43,7 +43,18 @@ def checkInclusion(s1, s2):
     return False
 
 
-s1 = "ab"
-s2 = "eidbaooo"
+def run_testcase():
 
-print(checkInclusion(s1, s2))
+    s1 = ['ab', "ab"]
+    s2 = ["eidbaooo", "eidboaoo"]
+    output = [True, False]
+    for i in range(len(s1)):
+        if (checkInclusion(s1[i], s2[i])) != output[i]:
+            print("Testcase %s failed, s1: %s, s2: %s, outcome: %s" % (i+1, 
+                s1[i], s2[i], output[i]))
+            continue
+        print("Testcase %s success, s1: %s, s2: %s, outcome: %s" % (i+1, 
+                s1[i], s2[i], output[i]))
+
+if __name__ == "__main__":
+    run_testcase()
