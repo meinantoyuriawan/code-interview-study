@@ -1,0 +1,4 @@
+besides of hash and array, trie also can be implemented using a character for every nodes.
+Array is simpler in terms of remembering how it implemented, because we can track and imagine the every nodes (for me though)
+
+I like hash the most because it can track the missing link (or I can comprehend it the most)
